@@ -141,6 +141,26 @@ function runTests(method) {
 				});
 			})[method](fnWrapper).then(expectation);
 		});
+		
+		it('preserves binding when chained with passed value', function() {
+			return Promise.bind({x: 9})
+			.return(params.value)[method](params.fn)
+			.then(function(result) {
+				expect(this).to.deep.equal({x: 9});
+			});
+		});
+		
+		it('preserves binding when chained with passed promise', function() {
+			return Promise.bind({x: 9})
+			.then(function() {
+				return Promise.delay(0).then(function() {
+					return params.value;
+				});
+			})[method](params.fn)
+			.then(function(result) {
+				expect(this).to.deep.equal({x: 9});
+			});
+		});
 	});
 }
 
