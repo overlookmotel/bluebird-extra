@@ -13,6 +13,6 @@
 * Tests for bound `this` being passed to iterator function
 * Tests for sync iterator functions
 
-## Next
+## v0.1.1
 
 * Correct mistake in README
