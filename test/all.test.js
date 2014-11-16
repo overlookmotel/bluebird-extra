@@ -161,6 +161,24 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
+		
+		it('iterator function receives binding with passed value', function() {
+			return Promise.bind({x: 9})
+			.return(params.value)[method](function() {
+				expect(this).to.deep.equal({x: 9});
+			});
+		});
+		
+		it('iterator function receives binding with passed promise', function() {
+			return Promise.bind({x: 9})
+			.then(function() {
+				return Promise.delay(0).then(function() {
+					return params.value;
+				});
+			})[method](	function() {
+				expect(this).to.deep.equal({x: 9});
+			});
+		});
 	});
 }
 

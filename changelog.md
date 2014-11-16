@@ -10,3 +10,4 @@
 * Remove unnecessary bind() on iterator function
 * Tests for chaining when passed promise
 * Tests for `this` binding being preserved along chain
+* Tests for bound `this` being passed to iterator function
