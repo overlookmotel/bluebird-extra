@@ -12,3 +12,7 @@
 * Tests for `this` binding being preserved along chain
 * Tests for bound `this` being passed to iterator function
 * Tests for sync iterator functions
+
+## Next
+
+* Correct mistake in README

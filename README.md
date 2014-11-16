@@ -21,7 +21,7 @@ To load module:
 
 Or, to use another version of bluebird as the base for augmentation (perhaps one which has already been augmented):
 
-	var Promise = require('bluebird-extra').use(require('some-bluebird-version'));
+	var Promise = require('bluebird-extra').usePromise(require('some-bluebird-version'));
 
 ### Additional methods:
 
