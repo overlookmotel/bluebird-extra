@@ -63,26 +63,30 @@ var tests = {
 		value: obj,
 		fn: function(value) {
 			return value + 10;
-		}
+		},
+		expectResult: {a: 1, b: 2, c: 3}
 	},
 	inSeries: {
 		value: obj,
 		fn: function(value) {
 			return value + 10;
 		},
+		expectResult: {a: 1, b: 2, c: 3},
 		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2], ['start', 3], ['end', 3]]
 	},
 	own: {
 		value: obj,
 		fn: function(value) {
 			return value + 10;
-		}
+		},
+		expectResult: {a: 1, b: 2, c: 3}
 	},
 	ownSeries: {
 		value: obj,
 		fn: function(value) {
 			return value + 10;
 		},
+		expectResult: {a: 1, b: 2, c: 3},
 		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2]]
 	},
 	
