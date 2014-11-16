@@ -4,7 +4,7 @@
 
 * Initial release
 
-## Next
+## 0.1.0
 
 * eachAny copes with iterator function returning sync
 * Remove unnecessary bind() on iterator function
