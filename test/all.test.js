@@ -109,32 +109,44 @@ describe('Method', function() {
 });
 
 function runTests(method) {
+	var params = tests[method];
+	var execArr;
+	
+	function expectation(result) {
+		if (params.expectResult) expect(result).to.deep.equal(params.expectResult);
+		if (params.expectExec) expect(execArr).to.deep.equal(params.expectExec);
+	}
+	
 	describe(method, function() {
-		var params = tests[method];
-		var execArr;
-		
-		function fnWrapper(value) {
-			execArr.push(['start', value]);
-			
-			return Promise.delay(100).then(function() {
+		describe('with sync iterator function', function() {
+			runTestsDo(function(value) {
+				execArr.push(['start', value]);
 				execArr.push(['end', value]);
 				return params.fn(value);
 			});
-		}
+		});
 		
-		function expectation(result) {
-			if (params.expectResult) expect(result).to.deep.equal(params.expectResult);
-			if (params.expectExec) expect(execArr).to.deep.equal(params.expectExec);
-		}
-		
+		describe('with async iterator function', function() {
+			runTestsDo(function(value) {
+				execArr.push(['start', value]);
+				
+				return Promise.delay(100).then(function() {
+					execArr.push(['end', value]);
+					return params.fn(value);
+				});
+			});
+		});
+	});
+	
+	function runTestsDo(fn) {
 		it('runs on Promise', function() {
 			execArr = [];
-			return Promise[method](params.value, fnWrapper).then(expectation);
+			return Promise[method](params.value, fn).then(expectation);
 		});
 		
 		it('runs chained when passed value', function() {
 			execArr = [];
-			return Promise.resolve(params.value)[method](fnWrapper).then(expectation);
+			return Promise.resolve(params.value)[method](fn).then(expectation);
 		});
 		
 		it('runs chained when passed promise', function() {
@@ -143,12 +155,12 @@ function runTests(method) {
 				return Promise.delay(0).then(function() {
 					return params.value;
 				});
-			})[method](fnWrapper).then(expectation);
+			})[method](fn).then(expectation);
 		});
 		
 		it('preserves binding when chained with passed value', function() {
 			return Promise.bind({x: 9})
-			.return(params.value)[method](params.fn)
+			.return(params.value)[method](fn)
 			.then(function(result) {
 				expect(this).to.deep.equal({x: 9});
 			});
@@ -160,7 +172,7 @@ function runTests(method) {
 				return Promise.delay(0).then(function() {
 					return params.value;
 				});
-			})[method](params.fn)
+			})[method](fn)
 			.then(function(result) {
 				expect(this).to.deep.equal({x: 9});
 			});
@@ -183,7 +195,7 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
-	});
+	}
 }
 
 function runIfElseTests() {
