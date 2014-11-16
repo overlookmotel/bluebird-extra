@@ -128,9 +128,18 @@ function runTests(method) {
 			return Promise[method](params.value, fnWrapper).then(expectation);
 		});
 		
-		it('runs chained', function() {
+		it('runs chained when passed value', function() {
 			execArr = [];
 			return Promise.resolve(params.value)[method](fnWrapper).then(expectation);
+		});
+		
+		it('runs chained when passed promise', function() {
+			execArr = [];
+			return Promise.try(function() {
+				return Promise.delay(0).then(function() {
+					return params.value;
+				});
+			})[method](fnWrapper).then(expectation);
 		});
 	});
 }

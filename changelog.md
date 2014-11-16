@@ -8,3 +8,4 @@
 
 * eachAny copes with iterator function returning sync
 * Remove unnecessary bind() on iterator function
+* Tests for chaining when passed promise
