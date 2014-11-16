@@ -15,6 +15,7 @@ chai.config.includeStack = true;
 
 // tests
 
+// define tests
 var obj = {a: 1, b: 2};
 obj.__proto__ = {c: 3};
 
@@ -100,14 +101,14 @@ var tests = {
 	}
 };
 
-describe('Method', function() {
-	for (var method in tests) {
-		runTests(method);
-	}
-	
-	runIfElseTests();
-});
+// run tests
+for (var method in tests) {
+	runTests(method);
+}
 
+runIfElseTests();
+
+// test functions
 function runTests(method) {
 	var params = tests[method];
 	var execArr;
@@ -161,7 +162,7 @@ function runTests(method) {
 		it('preserves binding when chained with passed value', function() {
 			return Promise.bind({x: 9})
 			.return(params.value)[method](fn)
-			.then(function(result) {
+			.then(function() {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
@@ -173,7 +174,7 @@ function runTests(method) {
 					return params.value;
 				});
 			})[method](fn)
-			.then(function(result) {
+			.then(function() {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
