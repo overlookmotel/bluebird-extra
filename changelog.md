@@ -17,6 +17,6 @@
 
 * Correct mistake in README
 
-## Next
+## 0.1.2
 
 * `forEach` alias of `each`
