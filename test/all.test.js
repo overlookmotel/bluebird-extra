@@ -215,7 +215,7 @@ function runTests(method) {
 				return Promise.delay(0).then(function() {
 					return params.value;
 				});
-			})[method](	function() {
+			})[method](function() {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
