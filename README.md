@@ -87,6 +87,11 @@ Tests the value passed in. If truthy, the if function is run, otherwise the else
 		// this runs if testExpression is not truthy
 	});
 
+#### each()
+##### Aliases: `forEach()`, `eachSeries()`
+
+`Promise.each()` is a native bluebird construct. `forEach()` and `eachSeries()` are aliases for it, included for consistency.
+
 ## Tests
 
 Use `npm test` to run the tests.

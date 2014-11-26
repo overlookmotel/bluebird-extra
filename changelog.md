@@ -20,3 +20,7 @@
 ## 0.1.2
 
 * `forEach` alias of `each`
+
+## Next
+
+* Added `eachSeries` alias of `each`
