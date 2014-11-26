@@ -21,7 +21,7 @@
 
 * `forEach` alias of `each`
 
-## Next
+## 0.1.3
 
 * Added `eachParallel` method
 * Added `eachSeries` alias of `each`
