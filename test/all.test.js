@@ -20,6 +20,14 @@ var obj = {a: 1, b: 2};
 obj.__proto__ = {c: 3};
 
 var tests = {
+	eachParallel: {
+		value: [1, 2],
+		fn: function(value) {
+			return value + 10;
+		},
+		expectResult: [1, 2]
+	},
+	
 	mapSeries: {
 		value: [1, 2],
 		fn: function(value) {

@@ -23,4 +23,5 @@
 
 ## Next
 
+* Added `eachParallel` method
 * Added `eachSeries` alias of `each`

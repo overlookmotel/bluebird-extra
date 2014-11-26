@@ -25,6 +25,10 @@ Or, to use another version of bluebird as the base for augmentation (perhaps one
 
 ### Additional methods:
 
+#### eachParallel()
+
+Like `Promise.each()` but run in parallel.
+
 #### mapSeries()
 
 Like `Promise.map()` but run in series.
