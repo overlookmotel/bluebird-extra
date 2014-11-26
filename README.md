@@ -59,7 +59,7 @@ Same as `mapIn()` but run in series.
 
 Iterates through properties of an object, calling the iterator function on each. Returns the object unchanged.
 
-	Promise.in({ a: 1, b: 2 }, function(value, key, object) {
+	Promise.own({ a: 1, b: 2 }, function(value, key, object) {
 		// do something
 	});
 
