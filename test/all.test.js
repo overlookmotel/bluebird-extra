@@ -25,7 +25,8 @@ var tests = {
 		fn: function(value) {
 			return value + 10;
 		},
-		expectResult: [1, 2]
+		expectResult: [1, 2],
+		expectExecFirst: [['start', 1], ['start', 2]]
 	},
 	
 	mapSeries: {
@@ -42,7 +43,8 @@ var tests = {
 		fn: function(value) {
 			return value + 10;
 		},
-		expectResult: {a: 11, b: 12, c: 13}
+		expectResult: {a: 11, b: 12, c: 13},
+		expectExecFirst: [['start', 1], ['start', 2], ['start', 3]]
 	},
 	mapInSeries: {
 		value: obj,
@@ -57,7 +59,8 @@ var tests = {
 		fn: function(value) {
 			return value + 10;
 		},
-		expectResult: {a: 11, b: 12}
+		expectResult: {a: 11, b: 12},
+		expectExecFirst: [['start', 1], ['start', 2]]
 	},
 	mapOwnSeries: {
 		value: obj,
@@ -73,7 +76,8 @@ var tests = {
 		fn: function(value) {
 			return value + 10;
 		},
-		expectResult: {a: 1, b: 2, c: 3}
+		expectResult: {a: 1, b: 2, c: 3},
+		expectExecFirst: [['start', 1], ['start', 2], ['start', 3]]
 	},
 	inSeries: {
 		value: obj,
@@ -88,7 +92,8 @@ var tests = {
 		fn: function(value) {
 			return value + 10;
 		},
-		expectResult: {a: 1, b: 2, c: 3}
+		expectResult: {a: 1, b: 2, c: 3},
+		expectExecFirst: [['start', 1], ['start', 2]]
 	},
 	ownSeries: {
 		value: obj,
@@ -121,9 +126,10 @@ function runTests(method) {
 	var params = tests[method];
 	var execArr;
 	
-	function expectation(result) {
+	function expectation(result, async) {
 		if (params.expectResult) expect(result).to.deep.equal(params.expectResult);
 		if (params.expectExec) expect(execArr).to.deep.equal(params.expectExec);
+		if (params.expectExecFirst && async) expect(execArr.slice(0, params.expectExecFirst.length)).to.deep.equal(params.expectExecFirst);
 	}
 	
 	describe(method, function() {
@@ -132,7 +138,7 @@ function runTests(method) {
 				execArr.push(['start', value]);
 				execArr.push(['end', value]);
 				return params.fn(value);
-			});
+			}, false);
 		});
 		
 		describe('with async iterator function', function() {
@@ -143,19 +149,25 @@ function runTests(method) {
 					execArr.push(['end', value]);
 					return params.fn(value);
 				});
-			});
+			}, true);
 		});
 	});
 	
-	function runTestsDo(fn) {
+	function runTestsDo(fn, async) {
 		it('runs on Promise', function() {
 			execArr = [];
-			return Promise[method](params.value, fn).then(expectation);
+			return Promise[method](params.value, fn)
+			.then(function(result) {
+				return expectation(result, async);
+			});
 		});
 		
 		it('runs chained when passed value', function() {
 			execArr = [];
-			return Promise.resolve(params.value)[method](fn).then(expectation);
+			return Promise.resolve(params.value)[method](fn)
+			.then(function(result) {
+				return expectation(result, async);
+			});
 		});
 		
 		it('runs chained when passed promise', function() {
@@ -164,7 +176,10 @@ function runTests(method) {
 				return Promise.delay(0).then(function() {
 					return params.value;
 				});
-			})[method](fn).then(expectation);
+			})[method](fn)
+			.then(function(result) {
+				return expectation(result, async);
+			});
 		});
 		
 		it('preserves binding when chained with passed value', function() {
