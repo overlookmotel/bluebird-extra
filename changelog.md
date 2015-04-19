@@ -29,4 +29,5 @@
 
 ## Next
 
+* Update bluebird dependency to ^2.9.24
 * Corrected typo in README
