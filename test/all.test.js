@@ -28,7 +28,7 @@ var tests = {
 		expectResult: [1, 2],
 		expectExecFirst: [['start', 1], ['start', 2]]
 	},
-	
+
 	mapSeries: {
 		value: [1, 2],
 		fn: function(value) {
@@ -37,7 +37,7 @@ var tests = {
 		expectResult: [11, 12],
 		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2]]
 	},
-	
+
 	mapIn: {
 		value: obj,
 		fn: function(value) {
@@ -70,7 +70,7 @@ var tests = {
 		expectResult: {a: 11, b: 12},
 		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2]]
 	},
-	
+
 	in: {
 		value: obj,
 		fn: function(value) {
@@ -103,7 +103,7 @@ var tests = {
 		expectResult: {a: 1, b: 2, c: 3},
 		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2]]
 	},
-	
+
 	eachAny: {
 		value: [undefined, 1, 2],
 		fn: function(value) {
@@ -125,13 +125,13 @@ runIfElseTests();
 function runTests(method) {
 	var params = tests[method];
 	var execArr;
-	
+
 	function expectation(result, async) {
 		if (params.expectResult) expect(result).to.deep.equal(params.expectResult);
 		if (params.expectExec) expect(execArr).to.deep.equal(params.expectExec);
 		if (params.expectExecFirst && async) expect(execArr.slice(0, params.expectExecFirst.length)).to.deep.equal(params.expectExecFirst);
 	}
-	
+
 	describe(method, function() {
 		describe('with sync iterator function', function() {
 			runTestsDo(function(value) {
@@ -140,11 +140,11 @@ function runTests(method) {
 				return params.fn(value);
 			}, false);
 		});
-		
+
 		describe('with async iterator function', function() {
 			runTestsDo(function(value) {
 				execArr.push(['start', value]);
-				
+
 				return Promise.delay(100).then(function() {
 					execArr.push(['end', value]);
 					return params.fn(value);
@@ -152,7 +152,7 @@ function runTests(method) {
 			}, true);
 		});
 	});
-	
+
 	function runTestsDo(fn, async) {
 		it('runs on Promise', function() {
 			execArr = [];
@@ -161,7 +161,7 @@ function runTests(method) {
 				return expectation(result, async);
 			});
 		});
-		
+
 		it('runs chained when passed value', function() {
 			execArr = [];
 			return Promise.resolve(params.value)[method](fn)
@@ -169,7 +169,7 @@ function runTests(method) {
 				return expectation(result, async);
 			});
 		});
-		
+
 		it('runs chained when passed promise', function() {
 			execArr = [];
 			return Promise.try(function() {
@@ -181,7 +181,7 @@ function runTests(method) {
 				return expectation(result, async);
 			});
 		});
-		
+
 		it('preserves binding when chained with passed value', function() {
 			return Promise.bind({x: 9})
 			.return(params.value)[method](fn)
@@ -189,7 +189,7 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
-		
+
 		it('preserves binding when chained with passed promise', function() {
 			return Promise.bind({x: 9})
 			.then(function() {
@@ -201,14 +201,14 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
-		
+
 		it('iterator function receives binding with passed value', function() {
 			return Promise.bind({x: 9})
 			.return(params.value)[method](function() {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
-		
+
 		it('iterator function receives binding with passed promise', function() {
 			return Promise.bind({x: 9})
 			.then(function() {
@@ -232,7 +232,7 @@ function runIfElseTests() {
 					expect(run2).to.be.undefined;
 				});
 			});
-			
+
 			it('runs 2nd function if value false', function() {
 				var run1, run2;
 				return Promise.ifElse(false, function(value) {run1 = value;}, function(value) {run2 = value;}).then(function() {
@@ -241,7 +241,7 @@ function runIfElseTests() {
 				});
 			});
 		});
-		
+
 		describe('runs chained', function() {
 			it('runs 1st function if value true', function() {
 				var run1, run2;
@@ -250,7 +250,7 @@ function runIfElseTests() {
 					expect(run2).to.be.undefined;
 				});
 			});
-			
+
 			it('runs 2nd function if value false', function() {
 				var run1, run2;
 				return Promise.resolve(false).ifElse(function(value) {run1 = value;}, function(value) {run2 = value;}).then(function() {

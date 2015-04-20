@@ -35,3 +35,4 @@
 * Travis runs on new container infrastructure
 * README code examples tagged as Javascript
 * Corrected typo in README
+* Remove trailing spaces
