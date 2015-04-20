@@ -17,11 +17,15 @@ Suggestions on additional methods to add or ways to improve the existing methods
 
 To load module:
 
-	var Promise = require('bluebird-extra');
+```js
+var Promise = require('bluebird-extra');
+```
 
 Or, to use another version of bluebird as the base for augmentation (perhaps one which has already been augmented):
 
-	var Promise = require('bluebird-extra').usePromise(require('some-bluebird-version'));
+```js
+var Promise = require('bluebird-extra').usePromise(require('some-bluebird-version'));
+```
 
 ### Additional methods:
 
@@ -38,9 +42,11 @@ Like `Promise.map()` but run in series.
 
 Maps an object like `lodash.mapValues()`
 
-	Promise.mapOwn({ a: 1, b: 2 }, function(value, key, object) {
-		// do something to the value and return it
-	});
+```js
+Promise.mapOwn({ a: 1, b: 2 }, function(value, key, object) {
+	// do something to the value and return it
+});
+```
 
 #### mapIn()
 
@@ -59,9 +65,11 @@ Same as `mapIn()` but run in series.
 
 Iterates through properties of an object, calling the iterator function on each. Returns the object unchanged.
 
-	Promise.own({ a: 1, b: 2 }, function(value, key, object) {
-		// do something
-	});
+```js
+Promise.own({ a: 1, b: 2 }, function(value, key, object) {
+	// do something
+});
+```
 
 #### ownSeries()
 ##### Alias: `forOwn()`
@@ -85,11 +93,13 @@ Runs iterator on each item in an array in series until the iterator returns a re
 
 Tests the value passed in. If truthy, the if function is run, otherwise the else function is run.
 
-	Promise.ifElse(testExpression, function(value) {
-		// this runs if testExpression is truthy
-	}, function(value) {
-		// this runs if testExpression is not truthy
-	});
+```
+Promise.ifElse(testExpression, function(value) {
+	// this runs if testExpression is truthy
+}, function(value) {
+	// this runs if testExpression is not truthy
+});
+```
 
 #### each()
 ##### Aliases: `forEach()`, `eachSeries()`

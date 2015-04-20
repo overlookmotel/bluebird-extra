@@ -32,4 +32,5 @@
 * Update bluebird dependency to ^2.9.24
 * Better way to produce API errors
 * Travis runs on new container infrastructure
+* README code examples tagged as Javascript
 * Corrected typo in README
