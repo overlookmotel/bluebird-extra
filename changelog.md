@@ -27,7 +27,7 @@
 * Added `eachSeries` alias of `each`
 * Tests for execution order for parallel functions
 
-## Next
+## 0.1.4
 
 * Update bluebird dependency to ^2.9.24
 * Better way to produce API errors
