@@ -30,4 +30,5 @@
 ## Next
 
 * Update bluebird dependency to ^2.9.24
+* Better way to produce API errors
 * Corrected typo in README
