@@ -36,3 +36,7 @@
 * README code examples tagged as Javascript
 * Corrected typo in README
 * Remove trailing spaces
+
+## Next
+
+* Update bluebird dependency to ^2.9.25
