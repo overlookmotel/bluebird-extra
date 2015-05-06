@@ -40,3 +40,4 @@
 ## Next
 
 * Update bluebird dependency to ^2.9.25
+* Update dev dependencies
