@@ -37,7 +37,7 @@
 * Corrected typo in README
 * Remove trailing spaces
 
-## Next
+## 0.1.5
 
 * Update bluebird dependency to ^2.9.25
 * Update dev dependencies

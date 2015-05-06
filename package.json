@@ -1,6 +1,6 @@
 {
   "name": "bluebird-extra",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Extra methods for bluebird promises library",
   "main": "./lib/",
   "author": {
