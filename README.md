@@ -4,8 +4,10 @@
 
 ## Current status
 
-[![Build Status](https://secure.travis-ci.org/overlookmotel/bluebird-extra.png?branch=master)](http://travis-ci.org/overlookmotel/bluebird-extra)
-[![Dependency Status](https://david-dm.org/overlookmotel/bluebird-extra.png)](https://david-dm.org/overlookmotel/bluebird-extra)
+[![NPM version](https://img.shields.io/npm/v/bluebird-extra.svg)](https://www.npmjs.com/package/bluebird-extra)
+[![Build Status](https://img.shields.io/travis/overlookmotel/bluebird-extra/master.svg)](http://travis-ci.org/overlookmotel/bluebird-extra)
+[![Dependency Status](https://img.shields.io/david/overlookmotel/bluebird-extra.svg)](https://david-dm.org/overlookmotel/bluebird-extra)
+[![Dev dependency Status](https://img.shields.io/david/dev/overlookmotel/bluebird-extra.svg)](https://david-dm.org/overlookmotel/bluebird-extra)
 
 API is mostly stable. Tests cover most scenarios but not very battle-tested in production as yet.
 
