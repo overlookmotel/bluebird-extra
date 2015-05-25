@@ -43,7 +43,7 @@
 * Update dev dependencies
 * README contribution section
 
-## Next
+## 0.1.6
 
 * Test code coverage & Travis sends to coveralls
 * Run jshint on tests
