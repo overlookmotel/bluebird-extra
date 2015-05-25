@@ -8,6 +8,7 @@
 [![Build Status](https://img.shields.io/travis/overlookmotel/bluebird-extra/master.svg)](http://travis-ci.org/overlookmotel/bluebird-extra)
 [![Dependency Status](https://img.shields.io/david/overlookmotel/bluebird-extra.svg)](https://david-dm.org/overlookmotel/bluebird-extra)
 [![Dev dependency Status](https://img.shields.io/david/dev/overlookmotel/bluebird-extra.svg)](https://david-dm.org/overlookmotel/bluebird-extra)
+[![Coverage Status](https://img.shields.io/coveralls/overlookmotel/bluebird-extra/master.svg)](https://coveralls.io/r/overlookmotel/bluebird-extra)
 
 API is mostly stable. Tests cover most scenarios but not very battle-tested in production as yet.
 
@@ -110,7 +111,7 @@ Promise.ifElse(testExpression, function(value) {
 
 ## Tests
 
-Use `npm test` to run the tests.
+Use `npm test` to run the tests. Use `npm run cover` to check coverage.
 
 ## Changelog
 
