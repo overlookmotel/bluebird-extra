@@ -46,3 +46,4 @@
 ## Next
 
 * Run jshint on tests
+* Remove use of `__proto__` in tests

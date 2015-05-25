@@ -19,8 +19,12 @@ chai.config.includeStack = true;
 /* global describe, it */
 
 // define tests
-var obj = {a: 1, b: 2};
-obj.__proto__ = {c: 3};
+var Obj = function() {};
+Obj.prototype.c = 3;
+
+var obj = new Obj();
+obj.a = 1;
+obj.b = 2;
 
 var tests = {
 	eachParallel: {
