@@ -15,6 +15,9 @@ chai.config.includeStack = true;
 
 // tests
 
+/* jshint expr: true */
+/* global describe, it */
+
 // define tests
 var obj = {a: 1, b: 2};
 obj.__proto__ = {c: 3};
