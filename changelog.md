@@ -49,3 +49,7 @@
 * Run jshint on tests
 * Remove use of `__proto__` in tests
 * Update README badges to use shields.io
+
+## Next
+
+* Disable Travis dependency cache
