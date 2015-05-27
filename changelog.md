@@ -50,6 +50,6 @@
 * Remove use of `__proto__` in tests
 * Update README badges to use shields.io
 
-## Next
+## 0.1.7
 
 * Disable Travis dependency cache
