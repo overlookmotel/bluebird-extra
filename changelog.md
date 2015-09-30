@@ -70,7 +70,7 @@ Breaking changes:
 
 * `.eachAny()` method runs first iteration asyncronously rather than straight away
 
-## Next
+## 1.0.1
 
 * Fix: `.usePromise()` method
 * Test for `.usePromise()` method
