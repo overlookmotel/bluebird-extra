@@ -53,3 +53,7 @@
 ## 0.1.7
 
 * Disable Travis dependency cache
+
+## Next
+
+* Update bluebird dependency to ^2.10.1
