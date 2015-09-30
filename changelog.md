@@ -73,3 +73,4 @@ Breaking changes:
 ## Next
 
 * Fix: `.usePromise()` method
+* Test for `.usePromise()` method

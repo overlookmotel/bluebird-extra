@@ -278,3 +278,12 @@ function runIfElseTests() {
 		});
 	});
 }
+
+describe('usePromise', function() {
+	it('uses supplied promise implementation', function() {
+		var FakePromise = function() {};
+		Promise.usePromise(FakePromise);
+
+		expect(FakePromise.mapSeries).to.be.ok;
+	});
+});
