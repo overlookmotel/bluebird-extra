@@ -63,6 +63,7 @@
 * Tests for asyncronous execution of first iteration
 * Code tidy
 * Speed up tests
+* Travis runs test on node v4
 
 Breaking changes:
 
