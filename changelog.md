@@ -60,6 +60,7 @@
 * `.usePromise()` method on results of `.usePromise(Promise)`
 * Update bluebird dependency to ^2.10.1
 * Update dev dependencies
+* Tests for asyncronous execution of first iteration
 * Code tidy
 
 Breaking changes:

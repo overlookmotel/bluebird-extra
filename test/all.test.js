@@ -226,6 +226,16 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
+
+		it('runs first iteration asyncronously', function() {
+			execArr = [];
+			var promise = Promise[method](params.value, fn);
+			execArr.push(['sync']);
+
+			return promise.then(function() {
+				expect(execArr[0]).to.deep.equal(['sync']);
+			});
+		});
 	}
 }
 
