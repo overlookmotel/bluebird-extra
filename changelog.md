@@ -54,7 +54,7 @@
 
 * Disable Travis dependency cache
 
-## Next
+## 1.0.0
 
 * `.eachAny()` method runs first iteration asyncronously
 * `.usePromise()` method on results of `.usePromise(Promise)`
