@@ -56,7 +56,12 @@
 
 ## Next
 
+* `.eachAny()` method runs first iteration asyncronously
 * `.usePromise()` method on results of `.usePromise(Promise)`
 * Update bluebird dependency to ^2.10.1
 * Update dev dependencies
 * Code tidy
+
+Breaking changes:
+
+* `.eachAny()` method runs first iteration asyncronously rather than straight away
