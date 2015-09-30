@@ -57,3 +57,4 @@
 ## Next
 
 * Update bluebird dependency to ^2.10.1
+* Update dev dependencies
