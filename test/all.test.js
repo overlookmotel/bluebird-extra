@@ -152,7 +152,7 @@ function runTests(method) {
 			runTestsDo(function(value) {
 				execArr.push(['start', value]);
 
-				return Promise.delay(100).then(function() {
+				return Promise.delay(1).then(function() {
 					execArr.push(['end', value]);
 					return params.fn(value);
 				});

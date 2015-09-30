@@ -62,6 +62,7 @@
 * Update dev dependencies
 * Tests for asyncronous execution of first iteration
 * Code tidy
+* Speed up tests
 
 Breaking changes:
 
