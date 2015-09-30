@@ -10,11 +10,13 @@
 [![Dev dependency Status](https://img.shields.io/david/dev/overlookmotel/bluebird-extra.svg)](https://david-dm.org/overlookmotel/bluebird-extra)
 [![Coverage Status](https://img.shields.io/coveralls/overlookmotel/bluebird-extra/master.svg)](https://coveralls.io/r/overlookmotel/bluebird-extra)
 
-API is mostly stable. Tests cover most scenarios but not very battle-tested in production as yet.
+API is stable. Test coverage of all features.
 
 Suggestions on additional methods to add or ways to improve the existing methods are very welcome.
 
 ## Usage
+
+Augments [bluebird](https://www.npmjs.com/package/bluebird) with extra flow control methods, similar to what's available in [async](https://www.npmjs.com/package/async) (for async code) or [lodash](https://www.npmjs.com/package/lodash) (for sync code).
 
 ### Loading module
 
@@ -30,7 +32,21 @@ Or, to use another version of bluebird as the base for augmentation (perhaps one
 var Promise = require('bluebird-extra').usePromise(require('some-bluebird-version'));
 ```
 
-### Additional methods:
+### Additional methods
+
+All the following methods can be called either on the `Promise` constructor, or a `Promise` instance.
+
+e.g.
+```js
+Promise.mapSeries([1, 2], function(value) {
+	// do something
+});
+
+Promise.resolve([1, 2]).mapSeries(function(value) {
+	// do something
+});
+
+```
 
 #### eachParallel()
 
@@ -115,7 +131,7 @@ Use `npm test` to run the tests. Use `npm run cover` to check coverage.
 
 ## Changelog
 
-See changelog.md
+See [changelog.md](https://github.com/overlookmotel/bluebird-extra/blob/master/changelog.md)
 
 ## Issues
 

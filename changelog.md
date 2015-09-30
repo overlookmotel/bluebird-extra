@@ -64,6 +64,7 @@
 * Code tidy
 * Speed up tests
 * Travis runs test on node v4
+* README
 
 Breaking changes:
 
