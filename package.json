@@ -13,9 +13,6 @@
   "bugs": {
     "url": "https://github.com/overlookmotel/bluebird-extra/issues"
   },
-  "dependencies": {
-    "bluebird": "^2.10.1"
-  },
   "devDependencies": {
     "mocha": "^2.3.3",
     "chai": "^3.3.0",
@@ -23,6 +20,9 @@
     "jshint": "^2.8.0",
     "istanbul": "^0.3.21",
     "coveralls": "^2.11.4"
+  },
+  "peerDependencies": {
+    "bluebird": ">=2.10.1"
   },
   "keywords": [
   ],
