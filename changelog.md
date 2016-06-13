@@ -74,3 +74,7 @@ Breaking changes:
 
 * Fix: `.usePromise()` method
 * Test for `.usePromise()` method
+
+## Next
+
+* Replace `Makefile` with npm scripts
