@@ -77,6 +77,7 @@ Breaking changes:
 
 ## Next
 
+* Return independent instance of bluebird
 * Refactor code
 * Update `bluebird` dependency to ^2.10.2
 * Update dev dependencies
