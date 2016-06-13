@@ -82,3 +82,4 @@ Breaking changes:
 * Travis tests against node v6
 * `package.json` keywords
 * Update license
+* Update `.npmignore`
