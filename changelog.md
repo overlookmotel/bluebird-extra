@@ -75,7 +75,7 @@ Breaking changes:
 * Fix: `.usePromise()` method
 * Test for `.usePromise()` method
 
-## Next
+## 2.0.0
 
 * Return independent instance of bluebird
 * Refactor code
