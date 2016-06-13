@@ -79,4 +79,5 @@ Breaking changes:
 
 * Update dev dependencies
 * Replace `Makefile` with npm scripts
+* `package.json` keywords
 * Update license

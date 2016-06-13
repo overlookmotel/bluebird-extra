@@ -25,6 +25,16 @@
     "coveralls": "^2.11.9"
   },
   "keywords": [
+    "bluebird",
+    "promise",
+    "extra",
+    "methods",
+    "async",
+    "for",
+    "map",
+    "each",
+    "series",
+    "parallel"
   ],
   "scripts": {
     "test": "if [ $COVERAGE ]; then npm run coveralls; else npm run jshint && npm run test-main; fi",
