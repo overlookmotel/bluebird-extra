@@ -77,6 +77,7 @@ Breaking changes:
 
 ## Next
 
+* Update `bluebird` dependency to ^2.10.2
 * Update dev dependencies
 * Replace `Makefile` with npm scripts
 * Travis tests against node v6
