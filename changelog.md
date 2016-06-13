@@ -29,7 +29,7 @@
 
 ## 0.1.4
 
-* Update bluebird dependency to ^2.9.24
+* Update `bluebird` dependency to ^2.9.24
 * Better way to produce API errors
 * Travis runs tests against node 0.10 and 0.12
 * Travis runs on new container infrastructure
@@ -39,7 +39,7 @@
 
 ## 0.1.5
 
-* Update bluebird dependency to ^2.9.25
+* Update `bluebird` dependency to ^2.9.25
 * Update dev dependencies
 * README contribution section
 
@@ -58,9 +58,9 @@
 
 * `.eachAny()` method runs first iteration asyncronously
 * `.usePromise()` method on results of `.usePromise(Promise)`
-* Update bluebird dependency to ^2.10.1
+* Update `bluebird` dependency to ^2.10.1
 * Update dev dependencies
-* Tests for asyncronous execution of first iteration
+* Tests for asynchronous execution of first iteration
 * Code tidy
 * Speed up tests
 * Travis runs test on node v4
@@ -68,7 +68,7 @@
 
 Breaking changes:
 
-* `.eachAny()` method runs first iteration asyncronously rather than straight away
+* `.eachAny()` method runs first iteration asynchronously rather than straight away
 
 ## 1.0.1
 
