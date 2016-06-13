@@ -7,6 +7,7 @@ node_js:
   - "0.10"
   - "0.12"
   - "4"
+  - "6"
 
 branches:
   only:
@@ -16,7 +17,7 @@ branches:
 matrix:
   fast_finish: true
   include:
-    - node_js: "0.10"
+    - node_js: "4"
       env: COVERAGE=true
   allow_failures:
     - env: COVERAGE=true
