@@ -86,3 +86,4 @@ Breaking changes:
 * `package.json` keywords
 * Update license
 * Update `.npmignore`
+* README update

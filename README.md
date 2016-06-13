@@ -26,10 +26,13 @@ To load module:
 var Promise = require('bluebird-extra');
 ```
 
-Or, to use another version of bluebird as the base for augmentation (perhaps one which has already been augmented):
+This returns an independent instance of `bluebird` v2, augmented with additional methods. It does not alter the global version of `bluebird` which would be received from `require('bluebird')`.
+
+Or, to use another version of bluebird as the base for augmentation:
 
 ```js
-var Promise = require('bluebird-extra').usePromise(require('some-bluebird-version'));
+var Promise = require('bluebird');
+require('bluebird-extra').usePromise(Promise);
 ```
 
 ### Additional methods
