@@ -77,5 +77,6 @@ Breaking changes:
 
 ## Next
 
+* Update dev dependencies
 * Replace `Makefile` with npm scripts
 * Update license
