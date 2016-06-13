@@ -77,6 +77,7 @@ Breaking changes:
 
 ## Next
 
+* Refactor code
 * Update `bluebird` dependency to ^2.10.2
 * Update dev dependencies
 * Replace `Makefile` with npm scripts
