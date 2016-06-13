@@ -78,3 +78,4 @@ Breaking changes:
 ## Next
 
 * Replace `Makefile` with npm scripts
+* Update license
