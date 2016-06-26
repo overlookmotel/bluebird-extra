@@ -36,15 +36,6 @@ var tests = {
 		expectExecFirst: [['start', 1], ['start', 2]]
 	},
 
-	mapSeries: {
-		value: [1, 2],
-		fn: function(value) {
-			return value + 10;
-		},
-		expectResult: [11, 12],
-		expectExec: [['start', 1], ['end', 1], ['start', 2], ['end', 2]]
-	},
-
 	mapIn: {
 		value: obj,
 		fn: function(value) {
@@ -226,16 +217,6 @@ function runTests(method) {
 				expect(this).to.deep.equal({x: 9});
 			});
 		});
-
-		it('runs first iteration asyncronously', function() {
-			execArr = [];
-			var promise = Promise[method](params.value, fn);
-			execArr.push(['sync']);
-
-			return promise.then(function() {
-				expect(execArr[0]).to.deep.equal(['sync']);
-			});
-		});
 	}
 }
 
@@ -284,6 +265,6 @@ describe('usePromise', function() {
 		var FakePromise = function() {};
 		Promise.usePromise(FakePromise);
 
-		expect(FakePromise.mapSeries).to.be.ok;
+		expect(Promise.mapSeries).to.be.ok;
 	});
 });
