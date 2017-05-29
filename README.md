@@ -1,5 +1,7 @@
 # bluebird-extra
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/overlookmotel/bluebird-extra.svg)](https://greenkeeper.io/)
+
 # Extra methods for bluebird promises library
 
 ## Current status
